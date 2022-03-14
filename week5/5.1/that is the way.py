@@ -2,7 +2,6 @@ import os
 """
 That's the way.
 By: Eliad Karni.
-ID: 206329104.
 
 The project receive a file path from the user and prints a list of the file in the received directory,
 which their names starts with PREFIX value.
