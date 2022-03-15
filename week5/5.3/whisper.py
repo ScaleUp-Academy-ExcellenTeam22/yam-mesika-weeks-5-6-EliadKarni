@@ -32,5 +32,6 @@ def get_a_whisper() -> str:
             char = file_reader.read(1)
 
 
-for word in get_a_whisper():
-    print(word)
+if __name__ == '__main__':
+    for word in get_a_whisper():
+        print(word)
