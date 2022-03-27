@@ -1,6 +1,7 @@
 import time
 import random
 from datetime import datetime
+
 """
 I have no vinaigrette!.
 By: Eliad Karni.
@@ -14,15 +15,15 @@ shopping day check -> https://www.delftstack.com/howto/python/python-datetime-da
 generate date -> https://stackoverflow.com/questions/553303/generate-a-random-date-between-two-other-dates
 """
 
-TIME_FORMAT = '%Y-%m-%d'
-SHOPPING_DAY = 0  # monday: 0, sunday: 6
-NO_VINAIGRETTE_DATE_OUTPUT = "I have no vinaigrette!"
+TIME_FORMAT = "%Y-%m-%d"
+# monday: 0, sunday: 6
+SHOPPING_DAY = 0
 
 
 def generate_date(earliest: str, latest: str) -> str:
     """
-    The function receiving start date and end date, returns a generated date
-    between those dates .
+    The function receives a start date and an end date, then returns a generated date
+    between those dates.
     :param earliest: The start date in TIME_SYNTAX syntax.
     :param latest: The end date in TIME_SYNTAX syntax.
     return generated date between the received dates.
@@ -33,7 +34,7 @@ def generate_date(earliest: str, latest: str) -> str:
     return time.strftime(TIME_FORMAT, time.localtime(rand_time))
 
 
-def is_shopping_day(date) -> bool:
+def is_shopping_day(date: str) -> bool:
     """
     The function returns if the received date is a SHOPPING_DAY
     :param date The checked date in TIME_SYNTAX syntax.
@@ -45,4 +46,4 @@ if __name__ == '__main__':
     rand_date = generate_date(input("please enter start date:"), input("please enter end date: "))
     print(f"date generated is: {rand_date}")
     if not is_shopping_day(rand_date):
-        print(NO_VINAIGRETTE_DATE_OUTPUT)
+        print("I have no vinaigrette!")
