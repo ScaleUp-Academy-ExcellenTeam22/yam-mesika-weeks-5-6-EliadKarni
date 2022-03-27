@@ -10,14 +10,14 @@ double list comprehension -> https://stackoverflow.com/questions/1198777/double-
 """
 
 
-def join(*args, sep='-') -> list:
+def join(*lists: list, sep='-') -> list:
     """
-    The function split each list in the received
-    :param args: lists of values wanted to be splitted.
+    The function split each list in the received.
+    :param lists: lists of values wanted to be splitted.
     :param sep: separate variable which will be between each list values.
     :return: list of each list's contents separated by sep value.
     """
-    separated_list = [var for contained_list in args for var in contained_list + [sep]]
+    separated_list = [var for contained_list in lists for var in contained_list + [sep]]
     separated_list.pop()
     return separated_list
 
