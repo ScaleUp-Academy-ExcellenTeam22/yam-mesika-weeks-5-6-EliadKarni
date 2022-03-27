@@ -3,7 +3,7 @@ import os
 That's the way.
 By: Eliad Karni.
 
-The project receive a file path from the user and prints a list of the file in the received directory,
+The code receive a file path from the user and prints a list of the file in the received directory,
 which their names starts with PREFIX value.
 
 used websites help:
