@@ -1,3 +1,4 @@
+import re
 """
 whisper.
 By: Eliad Karni.
@@ -17,15 +18,9 @@ def get_a_whisper() -> str:
     with open("logo.jpg", "br") as file_reader:
         decoded_word = ""
         for line in file_reader:
-            for char in line.decode(errors="ignore"):
-                if char == "!":
-                    if len(decoded_word) > 4:
-                        yield decoded_word
-                    decoded_word = ""
-                elif char.islower():
-                    decoded_word += char
-                else:
-                    decoded_word = ""
+            line = line.decode(errors="ignore")
+            for whisper in re.findall("[a-z]{5}[a-z]*[!]", line):
+                yield whisper.replace("!", "")
 
 
 if __name__ == "__main__":
